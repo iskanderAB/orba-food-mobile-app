@@ -32,12 +32,6 @@ import InitContainer from './src/containers/initContainer/InitContainer';
 
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   useEffect(()=>{ 
     const init = async () => {
       console.log("init app ")
@@ -58,6 +52,7 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    fontFamily: 'Almarai Regular'
   }
 });
 

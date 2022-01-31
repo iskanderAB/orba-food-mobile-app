@@ -2,6 +2,7 @@ import { Dimensions, StyleSheet, Text, TouchableHighlight, TouchableOpacity, Vie
 import React from 'react';
 import themColor from '../../../utils/colors/themColor';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import OrbaText from '../orbaText/OrbaText';
 
 const {width, height} = Dimensions.get('window');
 
@@ -13,7 +14,7 @@ const OrbaButton = ({color}:{color: string}) => {
               <Icon name="send" size={30} color={themColor.gray} />
             </View>
             <View style={styles.textContainer}>
-            <Text style={styles.text}>أرسل</Text>
+            <OrbaText style={styles.text}>أرسل</OrbaText>
             </View>
           </View>
         </TouchableOpacity>
@@ -33,9 +34,8 @@ const styles = StyleSheet.create({
     elevation: 6
   },
   text: {
-    fontSize: 23,
     marginEnd: '30%',
-    color: themColor.gray
+    color: themColor.darkGray
   },
   textContainer: {
     flex: 1,

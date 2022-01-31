@@ -22,6 +22,7 @@ const OrbaInput = () => {
         style={styles.input}
         selectionColor={themColor.gray}
         letterSpacing={3}
+        maxLength={8}
         keyboardAppearance='light'
         keyboardType={'phone-pad'}
         />
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         flexDirection: 'row',
         alignItems: 'center',
-        paddingLeft: 10,
+        paddingLeft: 20,
     },
     textInput: { 
       color: themColor.gray,
@@ -50,5 +51,6 @@ const styles = StyleSheet.create({
       fontSize: 18,
       color: themColor.gray,
       marginLeft: 10,
+      paddingLeft: 25
     }
 });

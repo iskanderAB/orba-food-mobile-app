@@ -1,17 +1,14 @@
 import React from 'react';
 import { 
   View,
-  Text,
   StyleSheet,
   ImageBackground,
   Image, 
-  TextInput,
-  KeyboardAvoidingView,
   ScrollView,
   Dimensions} from 'react-native';
 
 import PhoneForm from '../../components/phoneForm/PhoneForm';
-import OrbaButton from '../../components/UI/orbaButton/OrbaButton';
+import OrbaText from '../../components/UI/orbaText/OrbaText';
 
 
 import Colors from '../../utils/colors/themColor';
@@ -35,9 +32,9 @@ const InitContainer = ({children} :{ children : JSX.Element }): JSX.Element => {
         <View style={styles.subContainer}>
           <PhoneForm/>
         </View>
-        <Text style={styles.version}>
+        <OrbaText style={styles.version}>
             الاصدار :1.0.0 
-        </Text>
+        </OrbaText>
       </View>
     </ScrollView>
   );
