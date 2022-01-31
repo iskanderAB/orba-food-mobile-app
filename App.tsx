@@ -28,6 +28,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import RNBootSplash from "react-native-bootsplash";
+import InitContainer from './src/containers/initContainer/InitContainer';
 
 
 const App = () => {
@@ -48,29 +49,16 @@ const App = () => {
   },[])
   
   return (
-    <SafeAreaView style={backgroundStyle}>
-
+    <SafeAreaView style={styles.container}>
+      <InitContainer/>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+  container: {
+    flex: 1,
+  }
 });
 
 export default App;
