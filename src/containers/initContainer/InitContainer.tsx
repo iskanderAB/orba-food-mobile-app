@@ -50,7 +50,8 @@ const logoSize = {
 }
 const styles = StyleSheet.create({
   container: { 
-    height: height-50,
+    height: height-30,
+    fontFamily: "Almarai"
   },
   slider: { 
     width : '100%',
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     position: 'absolute',
     alignSelf: 'center',
-    // zIndex: 2,
+    zIndex: 2,
   },
   subContainer:{ 
     marginTop: logoSize.height/2,

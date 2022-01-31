@@ -12,6 +12,8 @@ target 'orba_food_mobile_app_v_beta' do
     :hermes_enabled => false
   )
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'orba_food_mobile_app_v_betaTests' do
     inherit! :complete
     # Pods for testing

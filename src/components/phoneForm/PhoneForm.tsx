@@ -32,7 +32,9 @@ const styles = StyleSheet.create({
   },
   formTitle: { 
     color: Colors.gray,
-    fontSize: 16,
-    textAlign: 'center'
+    fontSize: 18,
+    textAlign: 'center',
+    marginBottom: 20,
+    fontFamily: "Almarai"
   }
 })

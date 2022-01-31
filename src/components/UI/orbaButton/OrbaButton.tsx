@@ -1,18 +1,22 @@
-import { Dimensions, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, TouchableHighlight, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import themColor from '../../../utils/colors/themColor';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 const {width, height} = Dimensions.get('window');
 
 const OrbaButton = ({color}:{color: string}) => {
   return (
-      <View style={styles.container}>
-        <View style={styles.iconContainer}>
-          
-        </View>
-        <View style={styles.textContainer}>
-         <Text style={styles.text}>أرسل</Text>
-        </View>
-      </View>
+        <TouchableOpacity activeOpacity={0.9} style={{ elevation: 6}}>
+          <View style={styles.container}>
+            <View style={styles.iconContainer}>
+              <Icon name="send" size={30} color={themColor.gray} />
+            </View>
+            <View style={styles.textContainer}>
+            <Text style={styles.text}>أرسل</Text>
+            </View>
+          </View>
+        </TouchableOpacity>
   );
 };
 
@@ -26,9 +30,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     margin: 10,
     flexDirection: 'row',
+    elevation: 6
   },
   text: {
     fontSize: 23,
+    marginEnd: '30%',
+    color: themColor.gray
   },
   textContainer: {
     flex: 1,
@@ -39,8 +46,9 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     flex: .3,
-    backgroundColor: 'red',
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
