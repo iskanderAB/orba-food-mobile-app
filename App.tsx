@@ -28,7 +28,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import RNBootSplash from "react-native-bootsplash";
-import InitContainer from './src/containers/initContainer/InitContainer';
+import SignUpWithPhone from './src/screens/signUp/SignUpWithPhone';
 
 
 const App = () => {
@@ -44,7 +44,7 @@ const App = () => {
   
   return (
     <SafeAreaView style={styles.container}>
-      <InitContainer/>
+      <SignUpWithPhone/>
     </SafeAreaView>
   );
 };

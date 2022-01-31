@@ -8,14 +8,15 @@ import {
   import Colors from '../../utils/colors/themColor';
 import OrbaButton from '../UI/orbaButton/OrbaButton';
 import OrbaPhone from '../UI/orbaInput/OrbaPhone';
+import OrbaText from '../UI/orbaText/OrbaText';
 
 const {width, height} = Dimensions.get('window');
 const PhoneForm = () => {
   return (
       <View style={styles.container}>
-        <Text style={styles.formTitle}>
+        <OrbaText style={styles.formTitle}>
           الرجاء ادخال رقم الهاتف 
-        </Text>
+        </OrbaText>
         <OrbaPhone/>
         <OrbaButton  color='red'/>
       </View>
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
     color: Colors.gray,
     fontSize: 18,
     textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: 30,
     fontFamily: "Almarai Light"
   }
 })
