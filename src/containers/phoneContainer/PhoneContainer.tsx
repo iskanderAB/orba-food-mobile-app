@@ -4,8 +4,9 @@ import {
   StyleSheet} from 'react-native';
 
 import PhoneForm from '../../components/phoneForm/PhoneForm';
+import PhoneVerification from '../../components/phoneVerification/PhoneVerification';
 
-const InitContainer = ({children} :{ children : JSX.Element }): JSX.Element => {
+const PhoneContainer = ({children} :{ children : JSX.Element }): JSX.Element => {
   return (
     <View style={styles.container}>
       <PhoneForm/>
@@ -13,7 +14,7 @@ const InitContainer = ({children} :{ children : JSX.Element }): JSX.Element => {
   );
 };
 
-export default InitContainer;
+export default PhoneContainer;
 
 const logoSize = {
   width: 145,
