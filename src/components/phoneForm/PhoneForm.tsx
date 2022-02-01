@@ -1,8 +1,6 @@
 import React from 'react';
 import { 
   View,
-  Text,
-  TextInput, 
   StyleSheet, 
   Dimensions} from 'react-native';
   import Colors from '../../utils/colors/themColor';

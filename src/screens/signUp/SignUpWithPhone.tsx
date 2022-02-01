@@ -9,7 +9,8 @@ import {
 
 import PhoneForm from '../../components/phoneForm/PhoneForm';
 import OrbaText from '../../components/UI/orbaText/OrbaText';
-import InitContainer from '../../containers/initContainer/InitContainer';
+import PhoneContainer from '../../containers/phoneContainer/PhoneContainer';
+import InitContainer from '../../containers/phoneContainer/PhoneContainer';
 
 
 import Colors from '../../utils/colors/themColor';
@@ -30,7 +31,7 @@ const SignUpWithPhone = ({children} :{ children : JSX.Element }): JSX.Element =>
           </ImageBackground>
         </View>
         <Image source={require('../../res/logos/orbaLogo.png')} style={styles.logo}/>
-          <InitContainer/>
+          <PhoneContainer/>
         <OrbaText style={styles.version}>
             الاصدار :1.0.0 
         </OrbaText>
