@@ -7,7 +7,7 @@ import {
   TextInput } from 'react-native';
 import themColor from '../../../utils/colors/themColor';
 const {width, height} = Dimensions.get('window');
-const OrbaInput = () => {
+const OrbaPhone = () => {
   return (
     <KeyboardAvoidingView 
         style={styles.inputContainer} 
@@ -30,7 +30,7 @@ const OrbaInput = () => {
   );
 };
 
-export default OrbaInput;
+export default OrbaPhone;
 
 const styles = StyleSheet.create({
   inputContainer: {

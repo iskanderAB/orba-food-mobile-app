@@ -13,7 +13,7 @@ import Fonts from '../../res/fonts/Fonts';
 import themColor from '../../utils/colors/themColor';
 import Colors from '../../utils/colors/themColor';
 import Timer from '../timer/Timer';
-import OrbaButton from '../UI/orbaButton/OrbaButton';
+import OrbaSentButton from '../UI/orbaSentButton/OrbaSentButton';
 import OrbaText from '../UI/orbaText/OrbaText';
 import SquareInput from '../UI/squareInput/SquareInput';
 
@@ -30,7 +30,7 @@ const PhoneVerification = () => {
         // setTimeout(()=> input1Ref.current.focus() , 50)
   },[])
 
-  const onChange = (forwordTo):void =>{
+  const onChange = (forwordTo :any):void =>{
       forwordTo.current.focus();
   }
   return (
@@ -51,7 +51,7 @@ const PhoneVerification = () => {
             <SquareInput  ref={input3Ref} onChange={()=>onChange(input4Ref)} />
             <SquareInput  ref={input4Ref} onChange={()=>Keyboard.dismiss()} />
         </KeyboardAvoidingView>
-        <OrbaButton  color='red'/>
+        <OrbaSentButton icon={'send'} title={'ارسل'} mode='light' />
         <Timer/>
       </View>
   );

@@ -2,19 +2,21 @@ import React from 'react';
 import { 
   View,
   StyleSheet} from 'react-native';
+import EmailForm from '../../components/emailForm/EmailForm';
+import LoginForm from '../../components/loginForm/LoginForm';
 
 import PhoneForm from '../../components/phoneForm/PhoneForm';
 import PhoneVerification from '../../components/phoneVerification/PhoneVerification';
 
-const PhoneContainer = ({children} :{ children : JSX.Element }): JSX.Element => {
+const signUpContainer = (): JSX.Element => {
   return (
     <View style={styles.container}>
-      <PhoneForm/>
+      <LoginForm/>
     </View>
   );
 };
 
-export default PhoneContainer;
+export default signUpContainer;
 
 const logoSize = {
   width: 145,
