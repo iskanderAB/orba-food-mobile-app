@@ -28,7 +28,9 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import RNBootSplash from "react-native-bootsplash";
-import SignUpWithPhone from './src/screens/signUp/SignUpWithPhone';
+import SignUp from './src/screens/signUp/SignUp';
+import Register from './src/screens/register/Register';
+import themColor from './src/utils/colors/themColor';
 
 
 const App = () => {
@@ -44,7 +46,7 @@ const App = () => {
   
   return (
     <SafeAreaView style={styles.container}>
-      <SignUpWithPhone/>
+      <Register/>
     </SafeAreaView>
   );
 };
@@ -52,7 +54,8 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    fontFamily: 'Almarai Regular'
+    fontFamily: 'Almarai Regular',
+    backgroundColor: themColor.green,
   }
 });
 

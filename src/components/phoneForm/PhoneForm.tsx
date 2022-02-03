@@ -4,8 +4,8 @@ import {
   StyleSheet, 
   Dimensions} from 'react-native';
   import Colors from '../../utils/colors/themColor';
-import OrbaButton from '../UI/orbaButton/OrbaButton';
-import OrbaPhone from '../UI/orbaInput/OrbaPhone';
+import OrbaSentButton from '../UI/orbaSentButton/OrbaSentButton';
+import OrbaPhone from '../UI/orbaPhone/OrbaPhone';
 import OrbaText from '../UI/orbaText/OrbaText';
 
 const {width, height} = Dimensions.get('window');
@@ -16,7 +16,7 @@ const PhoneForm = () => {
           الرجاء ادخال رقم الهاتف 
         </OrbaText>
         <OrbaPhone/>
-        <OrbaButton  color='red'/>
+        <OrbaSentButton  icon={'send'} title={'ارسل'} mode='light' />
       </View>
   );
 };
