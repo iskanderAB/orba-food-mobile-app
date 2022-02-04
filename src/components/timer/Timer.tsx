@@ -2,6 +2,7 @@ import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import React, { useEffect, useState } from 'react';
 import themColor from '../../utils/colors/themColor';
+import Fonts from '../../res/fonts/Fonts';
 
 const {width, height} = Dimensions.get('window');
 
@@ -52,6 +53,7 @@ const styles = StyleSheet.create({
         color: themColor.orngeGold
     },
     text: { 
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily : Fonts.regular
     }
 });
