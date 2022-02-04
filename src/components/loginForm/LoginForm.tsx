@@ -26,7 +26,7 @@ const LoginForm = () => {
         </View>
         <OrbaButton/>
         <View style={styles.sigupView}>
-          <OrbaText style={styles.signup}> هل انت مستخدم جديد  </OrbaText>
+          <OrbaText style={styles.signup}> هل انت مستخدم جديد ؟ </OrbaText>
           <OrbaText style={{...styles.signup,color: themColor.orngeGold}}> انشىء حساب </OrbaText>
         </View>
       </View>

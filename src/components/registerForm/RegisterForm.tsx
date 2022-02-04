@@ -23,8 +23,8 @@ const RegisterForm = () => {
         <Terms/>
         <OrbaButton/>
         <View style={styles.newAccountText}>
-          <OrbaText style={{...styles.textNewAccount,color: themColor.orngeGold}}>  انشىء حساب </OrbaText>
-          <OrbaText style={styles.textNewAccount}>  هل انتمستخدم جديد </OrbaText>
+          <OrbaText style={{...styles.textNewAccount,color: themColor.orngeGold}}>   سجل الدخول  </OrbaText>
+          <OrbaText style={styles.textNewAccount}>  هل لديك حساب ؟  </OrbaText>
         </View>
     </View>
   </ScrollView>
