@@ -11,27 +11,12 @@
 import React, { useEffect } from 'react';
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
-  Text,
-  useColorScheme,
-  View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
 import RNBootSplash from "react-native-bootsplash";
-import SignUp from './src/screens/signUp/SignUp';
-import Register from './src/screens/register/Register';
 import themColor from './src/utils/colors/themColor';
-
+import MainNavigator from './src/navigators/mainNavigator/MainNavigator';
 
 const App = () => {
   useEffect(()=>{ 
@@ -46,7 +31,7 @@ const App = () => {
   
   return (
     <SafeAreaView style={styles.container}>
-      <Register/>
+      <MainNavigator/>
     </SafeAreaView>
   );
 };

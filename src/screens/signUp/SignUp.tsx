@@ -6,7 +6,11 @@ import {
   Image, 
   ScrollView,
   Dimensions,
-  Text} from 'react-native';
+  Text,
+  TouchableWithoutFeedback,
+  Touchable,
+  TouchableHighlight,
+  TouchableNativeFeedback} from 'react-native';
 import EmailForm from '../../components/emailForm/EmailForm';
 
 import PhoneForm from '../../components/phoneForm/PhoneForm';
@@ -21,7 +25,7 @@ import Colors from '../../utils/colors/themColor';
 
 const {width, height} = Dimensions.get('window');
 
-const SignUp = (): JSX.Element => {
+const SignUp = ({navigation}): JSX.Element => {
   return (
     <ScrollView style={{backgroundColor: Colors.green}}>
       <View style={styles.container}>
@@ -32,13 +36,25 @@ const SignUp = (): JSX.Element => {
             style={styles.imageBackround}
           >
             <View style={styles.greenFilterContainer}/>
-            <OrbaText style={styles.register}> تسجيل الدخول </OrbaText>
+            <TouchableNativeFeedback
+              onPress={()=> {
+                console.log("clicked2")
+                 navigation.navigate('Register');
+                console.log("clicked2")
+              } 
+              }
+            >
+              <View style={styles.register}>
+              <OrbaText style={styles.Textregister} > تسجيل الدخول </OrbaText>
+              </View>
+            </TouchableNativeFeedback>
           </ImageBackground>
         </View>
         <Image source={require('../../res/logos/orbaLogo.png')} style={styles.logo}/>
         <SignUpContainer/>
         <Version/>
       </View>
+  
     </ScrollView>
   );
 };
@@ -80,10 +96,13 @@ const styles = StyleSheet.create({
   },
   register: {
     position: 'absolute',
-    color: themColor.lightGray,
     alignSelf: 'flex-end',
-    fontSize: 18,
     marginTop: 10,
-    right: 10
+    right: 10,
+    zIndex: 100,
+  },
+  Textregister: { 
+    color: themColor.lightGray,
+    fontSize: 18,
   }
 })

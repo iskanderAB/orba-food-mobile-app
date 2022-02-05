@@ -18,7 +18,6 @@ const RegisterForm = () => {
         <OrbaInput mode='transparent' icon='lock' password lang='AR' placeholder='كلمة السر'/>
         <OrbaInput mode='transparent' icon='lock' password lang='AR' placeholder='اعادة كلموة السر'/>
         <OrbaInput mode='transparent' icon='calendar' lang='AR' placeholder='تاريخ الولادة'/>
-        <OrbaInput mode='transparent' icon='calendar' lang='AR' placeholder='تاريخ الولادة'/>
         <OrbaInput mode='transparent' icon='transgender' lang='AR' placeholder='ذكر'/>
         <Terms/>
         <OrbaButton/>

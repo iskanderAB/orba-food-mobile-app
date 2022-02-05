@@ -3,7 +3,7 @@ package com.orba_food_mobile_app_v_beta;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate; // <- add this necessary import
 import com.zoontek.rnbootsplash.RNBootSplash; // <- add this necessary import
-
+import android.os.Bundle; // <- added for react navgation
 public class MainActivity extends ReactActivity {
 
   /**
@@ -14,6 +14,11 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "orba_food_mobile_app_v_beta";
   }
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
+  }
+
   @Override
   protected ReactActivityDelegate createReactActivityDelegate() {
     return new ReactActivityDelegate(this, getMainComponentName()) {
