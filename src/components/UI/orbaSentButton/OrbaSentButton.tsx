@@ -6,9 +6,11 @@ import OrbaText from '../orbaText/OrbaText';
 
 const {width, height} = Dimensions.get('window');
 type Mode = "dark"|"light"|"transparent";
-const OrbaSentButton = ({icon,title,mode}:{icon:string,title:string,mode:Mode}) => {
+const OrbaSentButton = ({icon,title,mode,onPress}:{icon:string,title:string,mode:Mode,onPress?:any}) => {
   return (
-        <TouchableOpacity activeOpacity={0.85} >
+        <TouchableOpacity 
+          activeOpacity={0.85} 
+          onPress={onPress} >
           <View style={[styles.container,
                     {backgroundColor: mode==='light'? themColor.white : 'transparent',
                      borderWidth: mode === 'light' ? 0 : 1,

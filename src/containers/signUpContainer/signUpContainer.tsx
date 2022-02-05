@@ -11,7 +11,7 @@ import PhoneVerification from '../../components/phoneVerification/PhoneVerificat
 const signUpContainer = (): JSX.Element => {
   return (
     <View style={styles.container}>
-      <PhoneVerification/>
+      <EmailForm/>
     </View>
   );
 };
