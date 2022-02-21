@@ -14,7 +14,7 @@ const MainNavigator = () => {
         initialRouteName="SignUp"
         screenOptions={{
           presentation: 'modal',
-          
+          headerShown: false
         }}
       >
           <Stack.Screen name="SignUp" component={SignUp} />
