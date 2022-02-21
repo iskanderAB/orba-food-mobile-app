@@ -11,8 +11,9 @@ import {
   Touchable,
   TouchableHighlight,
   TouchableNativeFeedback} from 'react-native';
-import EmailForm from '../../components/emailForm/EmailForm';
+import LinearGradient from 'react-native-linear-gradient';
 
+import EmailForm from '../../components/emailForm/EmailForm';
 import PhoneForm from '../../components/phoneForm/PhoneForm';
 import OrbaText from '../../components/UI/orbaText/OrbaText';
 import Version from '../../components/version/Version';
@@ -27,8 +28,8 @@ const {width, height} = Dimensions.get('window');
 
 const SignUp = ({navigation}): JSX.Element => {
   return (
-    <ScrollView style={{backgroundColor: Colors.green}}>
-      <View style={styles.container}>
+    <ScrollView>
+       <LinearGradient colors={[Colors.lightGreen, Colors.darkGreen]} style={styles.container}>
         <View style={styles.slider}>
           <ImageBackground 
             source={require('../../res/images/foods.png')} 
@@ -53,8 +54,7 @@ const SignUp = ({navigation}): JSX.Element => {
         <Image source={require('../../res/logos/orbaLogo.png')} style={styles.logo}/>
         <SignUpContainer/>
         <Version/>
-      </View>
-  
+      </LinearGradient>
     </ScrollView>
   );
 };
@@ -66,8 +66,8 @@ const logoSize = {
 }
 const styles = StyleSheet.create({
   container: { 
-    height: height-30,
-    fontFamily: "Almarai"
+    height: height,
+    backgroundColor: Colors.green
   },
   slider: { 
     width : '100%',
@@ -104,5 +104,19 @@ const styles = StyleSheet.create({
   Textregister: { 
     color: themColor.lightGray,
     fontSize: 18,
-  }
+  },
+  linearGradient: {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5
+  },
+  buttonText: {
+    fontSize: 18,
+    fontFamily: 'Gill Sans',
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+    backgroundColor: 'transparent',
+  },
 })
