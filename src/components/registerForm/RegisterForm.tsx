@@ -1,14 +1,17 @@
+import React, { useState } from 'react';
 import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
 import OrbaText from '../UI/orbaText/OrbaText';
 import themColor from '../../utils/colors/themColor';
 import OrbaInput from '../UI/orbaInput/OrbaInput';
 import OrbaButton from '../UI/orbaButton/OrbaButton';
 import Terms from '../terms/Terms';
+import OrbaDatePicker from '../UI/orbaDatePicker/OrbaDatePicker';
+import Picker from '../UI/picker/Picker';
 
 const {height , width } = Dimensions.get("window");
 
 const RegisterForm = () => {
+  const [date, setDate] = useState<Date>(new Date(0));
   return (
    <ScrollView style={styles.scrollView}> 
     <View style={styles.container}>
@@ -17,8 +20,9 @@ const RegisterForm = () => {
         <OrbaInput mode='transparent' icon='envelope' lang='AR' placeholder='البريد الالكتروني'/>
         <OrbaInput mode='transparent' icon='lock' password lang='AR' placeholder='كلمة السر'/>
         <OrbaInput mode='transparent' icon='lock' password lang='AR' placeholder='اعادة كلموة السر'/>
-        <OrbaInput mode='transparent' icon='calendar' lang='AR' placeholder='تاريخ الولادة'/>
-        <OrbaInput mode='transparent' icon='transgender' lang='AR' placeholder='ذكر'/>
+        <OrbaDatePicker date={date} setDate={setDate}/>
+        {/* <OrbaInput mode='transparent' icon='calendar' lang='AR' placeholder='تاريخ الولادة'/> */}
+        <Picker/>
         <Terms/>
         <OrbaButton/>
         <View style={styles.newAccountText}>
