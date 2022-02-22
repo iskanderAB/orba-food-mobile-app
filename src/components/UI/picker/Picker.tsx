@@ -12,7 +12,7 @@ const items = [
 ];
 const Picker = () => {
   const [show , setShow] = useState(false);  
-  const [item, setItem] = useState(items[0]);
+  const [selectedItem, setSelectedItem] = useState(items[0]);
 
   return (
     <Pressable 
@@ -22,8 +22,8 @@ const Picker = () => {
       }}
       style={styles.container}
     >
-      <Icon name={item.icon} size={20} color={themColor.gray} />
-      <Text style={styles.selectedItem}>{item.value}</Text>
+      <Icon name={selectedItem.icon} size={20} color={themColor.gray} />
+      <Text style={styles.selectedItem}>{selectedItem.value}</Text>
       {show && 
           <View style={styles.listContainer}>
             {
@@ -33,11 +33,11 @@ const Picker = () => {
                   key={"Picker"+index}
                   onPress={()=> {
                     console.log('pressed' ,index);
-                    setItem(items[index]);
+                    setSelectedItem(items[index]);
                     setShow(false);
                   }}
                 >
-                  <View style={styles.itemContainer}>                 
+                  <View style={[styles.itemContainer,{backgroundColor: item.value === selectedItem.value ?  themColor.lightGray : 'transparent'}]}>                 
                     <Icon name={item.icon} size={20} color={themColor.gray} />
                     <Text style={styles.listItem}>
                       {item.value}
@@ -74,9 +74,9 @@ const styles = StyleSheet.create({
       top:0,
       left:0,
       right:0,
+      padding: 10
     },
     itemContainer: {
-      width: width*.80,
       alignItems: 'center',
       paddingLeft: 20,
       height:50,

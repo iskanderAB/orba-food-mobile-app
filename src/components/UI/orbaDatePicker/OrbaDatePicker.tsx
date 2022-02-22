@@ -31,8 +31,8 @@ const OrbaDatePicker: React.FC<OrbaDatePickerProps> = ({date, setDate}) => {
         <Text 
             style={styles.date}
         > 
-            {+date=== +(new Date(0)) ? "تاريخ الميلاد" 
-            : date.getDate() +"/"+ date.getMonth() +"/"+ date.getFullYear()}  
+            {+date=== +(new Date()) ? "تاريخ الميلاد" 
+            : date.getDate().toString().padStart(2,'0') +"/"+ (date.getMonth()+1).toString().padStart(2,'0') +"/"+ date.getFullYear()}  
         </Text>
         <DatePicker
             modal
@@ -43,11 +43,10 @@ const OrbaDatePicker: React.FC<OrbaDatePickerProps> = ({date, setDate}) => {
             title="تاريخ الميلاد "
             confirmText="تأكيد"
             cancelText='إلغاء'
-            date={new Date()}
+            date={date}
             onConfirm={(date) => {
                 setOpen(false)
                 setDate(date);
-                console.log("date => " , date)
             }}
             onCancel={() => {
                 setOpen(false)

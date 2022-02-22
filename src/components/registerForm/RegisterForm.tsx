@@ -11,7 +11,7 @@ import Picker from '../UI/picker/Picker';
 const {height , width } = Dimensions.get("window");
 
 const RegisterForm = () => {
-  const [date, setDate] = useState<Date>(new Date(0));
+  const [date, setDate] = useState<Date>(new Date());
   return (
    <ScrollView style={styles.scrollView}> 
     <View style={styles.container}>
