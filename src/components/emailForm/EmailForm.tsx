@@ -9,6 +9,7 @@ import OrbaText from '../UI/orbaText/OrbaText';
 import OrbaSentButton from '../UI/orbaSentButton/OrbaSentButton';
 import GoogleSignInButton from '../UI/googleSignInButton/GoogleSignInButton';
 import { useNavigation } from '@react-navigation/native';
+import Picker from '../UI/picker/Picker';
 
 const {width, height} = Dimensions.get('window');
 const EmailForm = () => {
