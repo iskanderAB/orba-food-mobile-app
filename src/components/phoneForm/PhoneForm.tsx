@@ -7,16 +7,23 @@ import {
 import OrbaSentButton from '../UI/orbaSentButton/OrbaSentButton';
 import OrbaPhone from '../UI/orbaPhone/OrbaPhone';
 import OrbaText from '../UI/orbaText/OrbaText';
+import { useNavigation } from '@react-navigation/native';
 
 const {width, height} = Dimensions.get('window');
 const PhoneForm = () => {
+  const navigation = useNavigation();
   return (
       <View style={styles.container}>
         <OrbaText style={styles.formTitle}>
           الرجاء ادخال رقم الهاتف 
         </OrbaText>
         <OrbaPhone/>
-        <OrbaSentButton  icon={'send'} title={'ارسل'} mode='light' />
+        <OrbaSentButton  
+          icon={'send'} 
+          title={'ارسل'} 
+          mode='light'
+          onPress={()=> navigation.navigate('signUp-phoneVerfication')}
+          />
       </View>
   );
 };

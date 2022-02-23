@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { 
   View,
   StyleSheet} from 'react-native';
 import EmailForm from '../../components/emailForm/EmailForm';
 import LoginForm from '../../components/loginForm/LoginForm';
-
 import PhoneForm from '../../components/phoneForm/PhoneForm';
 import PhoneVerification from '../../components/phoneVerification/PhoneVerification';
+import { formType } from '../../types/types';
 
-const signUpContainer = (): JSX.Element => {
+const signUpContainer = ({formName}:{formName: formType}): JSX.Element => {
   return (
     <View style={styles.container}>
-      <EmailForm/>
+      {
+        formName === 'phoneForm'
+        ?(<PhoneForm/>)
+        :formName === 'phoneVerfication'
+        ?(<PhoneVerification/>)
+        :formName === 'loginForm'
+        ?(<LoginForm/>)
+        :formName === 'emailForm'
+        ? (<EmailForm/>)
+        : null
+      }
+     
     </View>
   );
 };

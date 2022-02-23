@@ -8,23 +8,24 @@ import LinearGradient from 'react-native-linear-gradient';
 const {width, height} = Dimensions.get('window');
 const Register = () => {
   return (
-      <LinearGradient colors={[themColor.lightGreen, themColor.darkGreen]} style={styles.container}>
-        <Image source={require('../../res/logos/orbaLogo.png')} style={styles.logo}/>
-        <RegisterForm/>
-        <Version/>
-      </LinearGradient>
+    
+        <LinearGradient colors={[themColor.lightGreen, themColor.darkGreen]} style={styles.container}>
+          <Image source={require('../../res/logos/orbaLogo.png')} style={styles.logo}/>
+          <RegisterForm/>
+          <Version/>
+        </LinearGradient>
+      
   );
 };
-
 export default Register;
 const logoSize = {
-    width: '40%' ,
+    width: '40%',
     height : '20%'
   }
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        flex:1,
+        height,
         backgroundColor: themColor.green,
     },
     logo: {

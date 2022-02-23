@@ -1,3 +1,4 @@
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
 import { 
   View,
@@ -6,10 +7,6 @@ import {
   Image, 
   ScrollView,
   Dimensions,
-  Text,
-  TouchableWithoutFeedback,
-  Touchable,
-  TouchableHighlight,
   TouchableNativeFeedback} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -19,6 +16,7 @@ import OrbaText from '../../components/UI/orbaText/OrbaText';
 import Version from '../../components/version/Version';
 
 import SignUpContainer from '../../containers/signUpContainer/signUpContainer';
+import { formType } from '../../types/types';
 import themColor from '../../utils/colors/themColor';
 
 
@@ -26,7 +24,24 @@ import Colors from '../../utils/colors/themColor';
 
 const {width, height} = Dimensions.get('window');
 
-const SignUp = ({navigation}): JSX.Element => {
+type RootStackParamList = {
+  'signUp-loginForm' : {
+    formType: formType
+  },
+  'signUp-emailForm': {
+    formType: formType
+  },
+  'signUp-phoneVerfication': {
+    formType: formType
+  },
+  'signUp-phoneForm': {
+    formType: formType
+  },
+  'Register': undefined
+};
+
+type Props = NativeStackScreenProps<RootStackParamList, 'signUp-phoneForm'>;
+const SignUp = ({navigation ,route}:Props): JSX.Element => {
   return (
     <ScrollView>
        <LinearGradient colors={[Colors.lightGreen, Colors.darkGreen]} style={styles.container}>
@@ -39,20 +54,18 @@ const SignUp = ({navigation}): JSX.Element => {
             <View style={styles.greenFilterContainer}/>
             <TouchableNativeFeedback
               onPress={()=> {
-                console.log("clicked2")
-                 navigation.navigate('Register');
-                console.log("clicked2")
+                 navigation.navigate('signUp-loginForm');
               } 
               }
             >
               <View style={styles.register}>
-              <OrbaText style={styles.Textregister} > تسجيل الدخول </OrbaText>
+                <OrbaText style={styles.Textregister} > تسجيل الدخول </OrbaText>
               </View>
             </TouchableNativeFeedback>
           </ImageBackground>
         </View>
         <Image source={require('../../res/logos/orbaLogo.png')} style={styles.logo}/>
-        <SignUpContainer/>
+        <SignUpContainer formName={route.params.formType}/>
         <Version/>
       </LinearGradient>
     </ScrollView>
