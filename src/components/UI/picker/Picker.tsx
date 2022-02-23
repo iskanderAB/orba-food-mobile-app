@@ -1,4 +1,4 @@
-import { Dimensions, Pressable, StyleSheet, Text, Touchable, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
+import { Dimensions, Pressable, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import React, { useState } from 'react'
 import themColor from '../../../utils/colors/themColor';
 import Icon from 'react-native-vector-icons/FontAwesome';

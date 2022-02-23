@@ -3,7 +3,10 @@ import { StyleSheet, Text, TextInput, View } from 'react-native';
 import themColor from '../../../utils/colors/themColor';
 //FIXME 
 // add a type to ref props  
-const SquareInput = ({setInput, onChange}:{setInput: React.Dispatch<React.SetStateAction<string>>},ref :any) => {
+const SquareInput = (
+  {onChange}
+  :{onChange : ()=>void},
+  ref :any) => {
   return (
     <TextInput 
       style={styles.square} 

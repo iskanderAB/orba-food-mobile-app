@@ -30,7 +30,7 @@ const RegisterForm = () => {
           <OrbaText style={styles.textNewAccount}>  هل لديك حساب ؟  </OrbaText>
         </View>
     </View>
-  </ScrollView>
+   </ScrollView>
   );
 };
 
@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         width: width,
-        flex: 1,
         paddingBottom: 10
     },
     title: { 

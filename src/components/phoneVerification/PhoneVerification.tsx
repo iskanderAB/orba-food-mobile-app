@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { useEffect, useRef, useState } from 'react';
 import { 
   View,
@@ -26,6 +27,8 @@ const PhoneVerification = () => {
   const input3Ref = useRef<TextInput>(null);
   const input4Ref = useRef<TextInput>(null);
 
+  const navigation = useNavigation();
+
   useEffect(()=>{
         // setTimeout(()=> input1Ref.current.focus() , 50)
   },[])
@@ -51,7 +54,12 @@ const PhoneVerification = () => {
             <SquareInput  ref={input3Ref} onChange={()=>onChange(input4Ref)} />
             <SquareInput  ref={input4Ref} onChange={()=>Keyboard.dismiss()} />
         </KeyboardAvoidingView>
-        <OrbaSentButton icon={'send'} title={'ارسل'} mode='light' />
+        <OrbaSentButton 
+          icon={'send'} 
+          title={'ارسل'} 
+          mode='light'
+          onPress={()=> navigation.navigate('signUp-emailForm')}
+          />
         <Timer/>
       </View>
   );

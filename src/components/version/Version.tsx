@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import OrbaText from '../UI/orbaText/OrbaText';
 import themColor from '../../utils/colors/themColor';
