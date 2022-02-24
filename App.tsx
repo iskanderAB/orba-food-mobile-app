@@ -1,40 +1,34 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
 import React, { useEffect } from 'react';
 import {
   SafeAreaView,
   StatusBar,
   StyleSheet,
 } from 'react-native';
+import { Provider } from 'react-redux';
 
 import RNBootSplash from "react-native-bootsplash";
 import themColor from './src/utils/colors/themColor';
 import MainNavigator from './src/navigators/mainNavigator/MainNavigator';
+import store from './src/_redux/app/store';
 
 const App = () => {
   useEffect(()=>{ 
     const init = async () => {
-      console.log("init app ")
+      console.log(" init app ")
     };
     init().finally(async () => {
       await RNBootSplash.hide({ fade: true });
       console.log("Bootsplash has been hidden successfully");
     });
   },[])
-  
+
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar hidden/>
-      <MainNavigator/>
-    </SafeAreaView>
+    <Provider store={store}>
+      <SafeAreaView style={styles.container}>
+        <StatusBar hidden/>
+        <MainNavigator/>
+      </SafeAreaView>
+    </Provider>
   );
 };
 
