@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SignUp from '../../screens/signUp/SignUp';
 import Register from '../../screens/register/Register';
+import Home from '../../screens/home/Home';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,7 +12,7 @@ const MainNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="signUp-phoneForm"
+        initialRouteName="home-screen"
         screenOptions={{
           gestureEnabled: true,
           presentation: 'modal',
@@ -44,6 +45,16 @@ const MainNavigator = () => {
         <Stack.Screen
           name="Register"
           component={Register}
+          options={{
+            gestureEnabled: true,
+            presentation: 'modal',
+            animation: 'slide_from_bottom',
+            animationTypeForReplace: 'push',
+            }}
+        />
+        <Stack.Screen
+          name="home-screen"
+          component={Home}
           options={{
             gestureEnabled: true,
             presentation: 'modal',
