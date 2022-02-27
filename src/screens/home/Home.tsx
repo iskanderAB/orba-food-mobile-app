@@ -1,15 +1,11 @@
 import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
+import ListItems from '../../components/listItems/ListItems';
 import themColor from '../../utils/colors/themColor';
-import { useAppSelector, useAppDispatch } from '../../_redux/app/hooks';
-import { decrement, increment } from '../../_redux/features/main/mainSlice';
 const Home = () => {
-  const count = useAppSelector((state) => state.counter.value);
-  const dispatch = useAppDispatch();
   return (
     <View style={styles.container}>
-      <Text>Home {count} </Text>
-      <Button onPress={()=> dispatch(increment()) } title="click me"/>
+      <ListItems/>
     </View>
   )
 }
