@@ -7,6 +7,6 @@ export default {
     lightGreen:  '#046d66' ,//'#084F4B',
     darkGreen: '#03302d',
     white: '#f2f2f2',
-    black: '#181818'
-
+    black: '#181818',
+    ligthWhite: '#FFF'
 }

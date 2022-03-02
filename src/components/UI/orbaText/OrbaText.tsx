@@ -1,10 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleProp, StyleSheet, Text, TextStyle, View } from 'react-native';
 import React from 'react';
 type Mode = "dark"|"light"|"transparent";
-const OrbaText = ({children , mode , style,ellips=false}: {children: string, mode?: Mode, style?: object,ellips?:boolean}) => {
+interface OrbaTextProps {
+  children: string| React.ReactNode ,
+  mode?: Mode ,
+  style?: StyleProp<TextStyle> ,
+  ellips?: boolean
+}
+const OrbaText: React.FC<OrbaTextProps> = ({children , mode , style,ellips=false}) => {
   return (
       <Text 
-        style={{...styles.text,...style,}}
+        style={[styles.text,style]}
         numberOfLines={ellips? 2 : undefined}
       >
           {children}

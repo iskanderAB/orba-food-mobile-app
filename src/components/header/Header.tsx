@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <View style={styles.container}>
       <Icon name='bell-o' style={styles.notifIcon} />
-      <OrbaText style={styles.textHeader}>مرحبا بك اسكندر </OrbaText>
+      <OrbaText style={styles.textHeader}> مرحبا بك <OrbaText style={{color : themColor.green}}> اسكندر </OrbaText> </OrbaText>
     </View>
   )
 }
@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: "space-between",
         paddingHorizontal: width *.05,
-        elevation: 10
+        elevation: 10,
+        position: 'absolute'
     },
     notifIcon: {
       fontSize: 20,

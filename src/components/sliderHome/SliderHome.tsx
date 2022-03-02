@@ -1,7 +1,9 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { FlatList, Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { silderHomeheight } from '../../utils/constants/Constants'
-import { FlatList } from 'react-native-gesture-handler'
+import { headerHeight, silderHomeheight } from '../../utils/constants/Constants';
+import SliderItem from '../UI/sliderItem/SliderItem';
+import Indicator from '../UI/indicator/Indicator';
+import Animated, { event, useAnimatedScrollHandler, useSharedValue } from 'react-native-reanimated';
 const data = [
     {
       imageUrl: '../res/images/foodImages/burger.png',
@@ -34,16 +36,25 @@ const data = [
     
     ]
 const SliderHome = () => {
+
+  const scrollX = useSharedValue(0); 
+
+  const animatedHandler = useAnimatedScrollHandler({
+    onScroll: (event)=>{
+      scrollX.value = event.contentOffset.x;
+    }
+  })
   return (
     <View style={styles.container}>
-      <FlatList
-        data={data}
-        renderItem={({item})=>(
-            <Image 
-                source={require('../../res/images/foodImages/top-view.png')}/>
-        )}
-        horizontal
-      />
+      <View style={styles.slider}>
+        <Animated.FlatList
+          onScroll={animatedHandler}
+          data={data}
+          renderItem={({item,index})=>(<SliderItem/>)}
+          horizontal
+        />
+      </View>
+      <Indicator number={data.length} scrollX={scrollX}  />
     </View>
   )
 }
@@ -52,9 +63,15 @@ export default SliderHome
 
 const styles = StyleSheet.create({
     container: {
-        height: silderHomeheight,
-        backgroundColor: 'red',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        paddingTop: headerHeight,
+        flex: 3
+    },
+    slider: {
+      flex: 20
+    },
+    list: {
+      flex: 3
     }
 })

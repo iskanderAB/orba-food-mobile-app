@@ -125,12 +125,13 @@ const styles = StyleSheet.create({
     height: itemSize.height,
     width: itemSize.width,
     borderRadius: 10,
-    backgroundColor: themColor.white,
+    backgroundColor: themColor.ligthWhite,
     marginVertical: 10,
     overflow: 'hidden',
     borderWidth: 1,
     borderColor: 'rgba(81, 77, 77,.08)',
     elevation: 3,
+    alignSelf: 'center',
     justifyContent: 'center'
   },
   imageContainer: {

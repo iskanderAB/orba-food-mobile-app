@@ -43,6 +43,7 @@ const ListItems = () => {
       data={data}
       showsVerticalScrollIndicator={false}
       ListHeaderComponent={HeaderHome}
+      ListFooterComponent={<View><Text> copyrigth 2022  </Text></View>}
       renderItem={({ item, index, separators })=>(
         <Item {...item}/>
       )}

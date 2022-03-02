@@ -7,3 +7,4 @@ export const itemSize = {
 };
 export const silderHomeheight = height*.3; 
 export const headerHeight = height*.08; 
+export const itemSliderWidth = width *.8;
