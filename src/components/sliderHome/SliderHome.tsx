@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         paddingTop: headerHeight,
-        flex: 3
+        flex: 2
     },
     slider: {
       flex: 20

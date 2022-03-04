@@ -12,7 +12,7 @@ const Indicator = ({ number, scrollX }:{number: number,scrollX: SharedValue<numb
             const animatedStyle = useAnimatedStyle(()=>{
                  const updatedWidth = interpolate(scrollX.value,
                     [(i-1)* itemSliderWidth, i *itemSliderWidth, ((i+1) * itemSliderWidth)-itemSliderWidth*.1],
-                    [itemSliderWidth*.03, itemSliderWidth*.07, itemSliderWidth*.03],
+                    [itemSliderWidth*.02, itemSliderWidth*.06, itemSliderWidth*.02],
                     Extrapolate.CLAMP
                   )
                   const updatedOpacity = interpolate(scrollX.value,
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     ball: {
-        height: itemSliderWidth*.03,
+        height: itemSliderWidth*.02,
         backgroundColor: themColor.green,
         borderRadius: 5,
         marginHorizontal: 2

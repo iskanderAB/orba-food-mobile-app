@@ -77,7 +77,7 @@ const Item: React.FC<ItemProps> = ({
 
   return (
     <View style={styles.container}>
-      <GestureHandlerRootView style={styles.imageContainer}>
+      <View style={styles.imageContainer}>
         <GestureDetector gesture={Gesture.Exclusive(taps)}>
           <Animated.View style={{flex: 1, backgroundColor: 'red'}}>
             <ImageBackground
@@ -95,7 +95,7 @@ const Item: React.FC<ItemProps> = ({
             </ImageBackground>
           </Animated.View>
         </GestureDetector>
-      </GestureHandlerRootView>
+      </View>
       <View style={styles.textContainer}>
         <Text style={styles.title} numberOfLines={1} ellipsizeMode="tail">
           {title}
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     overflow: 'hidden',
     borderWidth: 1,
-    borderColor: 'rgba(81, 77, 77,.08)',
+    borderColor: 'rgba(81, 77, 77,.02)',
     elevation: 3,
     alignSelf: 'center',
     justifyContent: 'center'
