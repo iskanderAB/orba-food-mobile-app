@@ -10,6 +10,7 @@ import RNBootSplash from "react-native-bootsplash";
 import themColor from './src/utils/colors/themColor';
 import MainNavigator from './src/navigators/mainNavigator/MainNavigator';
 import store from './src/_redux/app/store';
+import TabNavigator from './src/navigators/componenets/tabNavigations/TabNavigator';
 
 const App = () => {
   useEffect(()=>{ 

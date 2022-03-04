@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { headerHeight, width } from '../../utils/constants/Constants';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/Ionicons';
 import themColor from '../../utils/colors/themColor';
 import OrbaText from '../UI/orbaText/OrbaText';
 
 const Header = () => {
   return (
     <View style={styles.container}>
-      <Icon name='bell-o' style={styles.notifIcon} />
+      <Icon name='notifications-outline' style={styles.notifIcon} />
       <OrbaText style={styles.textHeader}> مرحبا بك <OrbaText style={{color : themColor.green}}> اسكندر </OrbaText> </OrbaText>
     </View>
   )
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
     },
     notifIcon: {
-      fontSize: 20,
+      fontSize: 26,
       color: themColor.darkGray
     },
     textHeader: {
