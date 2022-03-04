@@ -40,8 +40,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   dots: {
-    fontSize: 36,
-    color: themColor.darkGray,
+    fontSize: 26,
+    color: themColor.darkGray ,
   },
   text: {
     flex: 1,

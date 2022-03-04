@@ -1,5 +1,5 @@
-import React, {useCallback, useRef, useState} from 'react';
-import { StyleSheet, Text, View} from 'react-native';
+import React, {useCallback, useRef} from 'react';
+import { StyleSheet} from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {useSharedValue} from 'react-native-reanimated';
 import BottomSheet, {
@@ -9,7 +9,7 @@ import GridCategories from '../../components/gridCategories/GridCategories';
 import Header from '../../components/header/Header';
 import ListItems from '../../components/listItems/ListItems';
 import BlackFilterBackground from '../../components/UI/blackFilterBackground/BlackFilterBackground';
-import ItemCategory from '../../components/UI/itemCategory/ItemCategory';
+import TabNavigator from '../../navigators/componenets/tabNavigations/TabNavigator';
 import themColor from '../../utils/colors/themColor';
 import {width} from '../../utils/constants/Constants';
 const Home = () => {
@@ -34,6 +34,7 @@ const Home = () => {
       <BottomSheet ref={bottomSheet} translateY={translateSheetBottomY}>
         <GridCategories/>
       </BottomSheet>
+      <TabNavigator/>
     </GestureHandlerRootView>
   );
 };

@@ -41,27 +41,29 @@ const MainNavigator = () => {
             component={SignUp}
             initialParams={{formType: 'emailForm'}}
           />
+                    <Stack.Screen
+            name="Register"
+            component={Register}
+            options={{
+              gestureEnabled: true,
+              presentation: 'modal',
+              animation: 'slide_from_bottom',
+              animationTypeForReplace: 'push',
+              }}
+          />
         </Stack.Group>
-        <Stack.Screen
-          name="Register"
-          component={Register}
-          options={{
-            gestureEnabled: true,
-            presentation: 'modal',
-            animation: 'slide_from_bottom',
-            animationTypeForReplace: 'push',
-            }}
-        />
-        <Stack.Screen
-          name="home-screen"
-          component={Home}
-          options={{
-            gestureEnabled: true,
-            presentation: 'modal',
-            animation: 'slide_from_bottom',
-            animationTypeForReplace: 'push',
-            }}
-        />
+        <Stack.Group>
+          <Stack.Screen
+            name="home-screen"
+            component={Home}
+            options={{
+              gestureEnabled: true,
+              presentation: 'modal',
+              animation: 'slide_from_bottom',
+              animationTypeForReplace: 'push',
+              }}
+          />
+        </Stack.Group>
       </Stack.Navigator>
     </NavigationContainer>
   );

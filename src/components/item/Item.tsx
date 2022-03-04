@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     width: itemSize.width,
     borderRadius: 10,
     backgroundColor: themColor.ligthWhite,
-    marginVertical: 10,
+    marginVertical: 5,
     overflow: 'hidden',
     borderWidth: 1,
     borderColor: 'rgba(81, 77, 77,.02)',
