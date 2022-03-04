@@ -4,7 +4,6 @@ import { headerHeight, width } from '../../utils/constants/Constants';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import themColor from '../../utils/colors/themColor';
 import OrbaText from '../UI/orbaText/OrbaText';
-import Fonts from '../../res/fonts/Fonts';
 
 const Header = () => {
   return (
@@ -21,13 +20,13 @@ const styles = StyleSheet.create({
     container: {
         height: headerHeight,
         width: '100%',
-        backgroundColor: themColor.white,
+        backgroundColor: themColor.ligthWhite,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: "space-between",
         paddingHorizontal: width *.05,
-        elevation: 10,
-        position: 'absolute'
+        elevation: 6,
+        position: 'absolute',
     },
     notifIcon: {
       fontSize: 20,

@@ -1,24 +1,50 @@
-import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import React, {useCallback, useRef, useState} from 'react';
+import { StyleSheet, Text, View} from 'react-native';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {useSharedValue} from 'react-native-reanimated';
+import BottomSheet, {
+  BottomSheetRefProps,
+} from '../../components/bottomSheet/BottomSheet';
+import GridCategories from '../../components/gridCategories/GridCategories';
 import Header from '../../components/header/Header';
 import ListItems from '../../components/listItems/ListItems';
+import BlackFilterBackground from '../../components/UI/blackFilterBackground/BlackFilterBackground';
+import ItemCategory from '../../components/UI/itemCategory/ItemCategory';
 import themColor from '../../utils/colors/themColor';
-import { width } from '../../utils/constants/Constants';
+import {width} from '../../utils/constants/Constants';
 const Home = () => {
-  return (
-    <View style={styles.container}>
-      <Header/>
-      <ListItems/>
-    </View>
-  )
-}
+  const bottomSheet = useRef<BottomSheetRefProps>(null);
+  const translateSheetBottomY = useSharedValue(0);
+  const onPress = () => {
+    if (bottomSheet?.current?.isActive()) bottomSheet?.current?.scrollTo(-200);
+    else bottomSheet?.current?.scrollTo(0);
+  };
+  const hidePress = useCallback(() => {
+    bottomSheet?.current?.scrollTo(0);
+  }, []);
 
-export default Home
+  return (
+    <GestureHandlerRootView style={styles.container}>
+      <Header />
+      <ListItems sheetPress={onPress} />
+      <BlackFilterBackground
+        translateY={translateSheetBottomY}
+        hidePress={hidePress}
+      />
+      <BottomSheet ref={bottomSheet} translateY={translateSheetBottomY}>
+        <GridCategories/>
+      </BottomSheet>
+    </GestureHandlerRootView>
+  );
+};
+
+export default Home;
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: themColor.ligthWhite,
-        alignItems: 'center',
-        width: width
-    }
-})
+  container: {
+    backgroundColor: themColor.ligthWhite,
+    alignItems: 'center',
+    width: width,
+    flex: 1,
+  },
+});

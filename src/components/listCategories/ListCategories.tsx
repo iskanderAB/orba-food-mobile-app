@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import ItemCategory from '../UI/itemCategory/ItemCategory'
 import { width } from '../../utils/constants/Constants';
+import ButtonCategory from '../UI/buttonCategory/ButtonCategory';
 
 
 const data = [
@@ -36,13 +37,14 @@ const data = [
     
     ]
 
-const ListCategories = () => {
+const ListCategories = ({sheetPress}:{sheetPress: ()=> void}) => {
   return (
     <View style={styles.container}>
       <ItemCategory src={'https://pngimg.com/uploads/sandwich/sandwich_PNG67.png'} />
       <ItemCategory src={'https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG96784.png'}/>
       <ItemCategory src={'https://pngimg.com/uploads/sandwich/sandwich_PNG67.png'} />
-      <ItemCategory src={'dots'}/>
+      <ItemCategory src={'https://pngimg.com/uploads/sandwich/sandwich_PNG67.png'} />
+      <ButtonCategory sheetPress={sheetPress}/>
     </View>
   )
 }
@@ -55,6 +57,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent : 'space-between',
         paddingVertical: 5,
-        paddingHorizontal: width *.025
+        paddingHorizontal: width *.1,
+
     }
 })
