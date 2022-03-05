@@ -3,16 +3,17 @@ import React from 'react'
 import { height, tabBarHeight, width } from '../../../utils/constants/Constants'
 import themColor from '../../../utils/colors/themColor'
 import TabItem from '../TabItem/TabItem'
+import Animated, { StyleProps } from 'react-native-reanimated'
 
-const TabNavigator = () => {
+const TabNavigator = ({tabBarAnimation}:{tabBarAnimation: StyleProps}) => {
   return (
-    <View style={styles.container}>
+    <Animated.View style={[styles.container,tabBarAnimation]}>
       <TabItem name='home-outline'/>
       <TabItem name='search-outline'/>
       <TabItem name='ios-cart-outline'/>
       <TabItem name='heart-outline'/>
       <TabItem name='person-outline'/>
-    </View>
+    </Animated.View>
   )
 }
 
@@ -22,11 +23,13 @@ const styles = StyleSheet.create({
     container: {
         height: tabBarHeight,
         width: width ,
-        backgroundColor: themColor.ligthWhite,
+        backgroundColor: themColor.green,
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
+        justifyContent: 'center',
+        alignItems: 'center',
         position: 'absolute',
         bottom: 0,
         elevation: 10,
+        opacity: 1
     }
 })

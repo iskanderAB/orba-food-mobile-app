@@ -8,5 +8,6 @@ export default {
     darkGreen: '#03302d',
     white: '#f2f2f2',
     black: '#181818',
-    ligthWhite: '#FFF'
+    ligthWhite: '#FFF',
+    androidGreen: '#73b490'
 }

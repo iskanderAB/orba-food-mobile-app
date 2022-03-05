@@ -1,5 +1,5 @@
 import {ImageBackground, StyleSheet, Text, View} from 'react-native';
-import React, {useCallback} from 'react';
+import React, {useCallback, useRef} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import themColor from '../../utils/colors/themColor';
 import Heart from '../UI/heart/Heart';
@@ -7,16 +7,18 @@ import {itemSize} from '../../utils/constants/Constants';
 import {
   Gesture,
   GestureDetector,
-  GestureHandlerRootView,
 } from 'react-native-gesture-handler';
 import Animated, {
+  cancelAnimation,
   Extrapolate,
   interpolate,
   useAnimatedStyle,
   useSharedValue,
+  withSequence,
   withSpring,
   withTiming,
 } from 'react-native-reanimated';
+import Ripple from '../UI/Ripple/Ripple';
 
 interface ItemProps {
   imageUrl: string;
@@ -24,39 +26,33 @@ interface ItemProps {
   price: number[];
   deliveryTimeEstimation: number[];
   liked: boolean;
+  index: number
 }
 
-const Item: React.FC<ItemProps> = ({
+const Item: React.FC<ItemProps> = React.memo(({
   imageUrl,
   title,
   price,
   deliveryTimeEstimation,
   liked,
+  index
 }) => {
   const scale = useSharedValue(0);
+  const counrRender= useRef(0);
+  console.log("form Item ",index," => ",  counrRender.current++);
   const singleTap = Gesture.Tap().onStart(() => {
     console.log('Single tap!');
   });
   const doubleClickHandler = useCallback(() => {
     'worklet';
-    scale.value = withSpring(
-      1,
-      {
-        damping: 7,
-      },
-      f => {
-        if (f) {
-          scale.value = withTiming(0);
-        }
-      },
-    );
+    cancelAnimation(scale);
+    scale.value = withSequence(withSpring(1,{damping: 7}),withTiming(0));
   }, []);
 
   const doubleTap = Gesture.Tap()
     .numberOfTaps(2)
     .onStart(() => {
       doubleClickHandler();
-      console.log('Double tap!');
     });
 
   const heartAnimation = useAnimatedStyle(() => {
@@ -66,8 +62,8 @@ const Item: React.FC<ItemProps> = ({
           scale: scale.value,
         },
         {
-          translateY : -itemSize.height* .1
-        }
+          translateY: -itemSize.height * 0.1,
+        },
       ],
       opacity: interpolate(scale.value, [0, 1], [0.3, 1], Extrapolate.CLAMP),
     };
@@ -77,9 +73,13 @@ const Item: React.FC<ItemProps> = ({
 
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <GestureDetector gesture={Gesture.Exclusive(taps)}>
-          <Animated.View style={{flex: 1, backgroundColor: 'red'}}>
+      {/* <Ripple
+        onTap={() => {
+          console.log('tap');
+        }}> */}
+      <GestureDetector gesture={Gesture.Exclusive(taps)}>
+        <View style={styles.imageContainer}>
+          <View style={{flex: 1, backgroundColor: 'red'}}>
             <ImageBackground
               source={require('../../res/images/foodImages/burger.png')}
               style={styles.imageBackground}>
@@ -89,13 +89,13 @@ const Item: React.FC<ItemProps> = ({
                   <Text style={styles.rating}> 4.5 </Text>
                 </View>
                 <View>
-                  <Heart liked={liked}/>
+                  <Heart liked={liked} />
                 </View>
               </View>
             </ImageBackground>
-          </Animated.View>
-        </GestureDetector>
-      </View>
+          </View>
+        </View>
+      </GestureDetector>
       <View style={styles.textContainer}>
         <Text style={styles.title} numberOfLines={1} ellipsizeMode="tail">
           {title}
@@ -114,9 +114,10 @@ const Item: React.FC<ItemProps> = ({
         source={require('../../res/images/heart.png')}
         style={[styles.heart, heartAnimation]}
       />
+      {/* </Ripple>  */}
     </View>
   );
-};
+});
 
 export default Item;
 
@@ -132,7 +133,7 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(81, 77, 77,.02)',
     elevation: 3,
     alignSelf: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   imageContainer: {
     flex: 3,
