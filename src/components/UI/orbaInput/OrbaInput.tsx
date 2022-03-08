@@ -9,9 +9,15 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const {width, height} = Dimensions.get('window');
 type Mode = "dark"|"light"|"transparent";
 type Lang = "AR"|"FR";
-const OrbaInput = (
-  {icon,mode, password=false,lang='FR',placeholder=''}
-  :{icon:string, mode:Mode,password?:boolean,lang?:Lang,placeholder?:string})=> 
+
+interface Props { 
+  icon:string,
+  mode:Mode,
+  password?:boolean,
+  lang?:Lang,
+  placeholder?:string
+}
+const OrbaInput: React.FC<Props> = ({icon,mode, password=false,lang='FR',placeholder=''})=> 
   {
     return (
       <KeyboardAvoidingView 
@@ -26,14 +32,14 @@ const OrbaInput = (
         >
         <Icon name={icon} size={20} color={themColor.gray} />
         <TextInput 
-          style={lang === 'FR' ? styles.inputFR : styles.inputAR}
-          selectionColor={themColor.gray}
-          letterSpacing={2}
-          maxLength={50}
-          keyboardAppearance='light'
-          placeholder={placeholder === '' ?  password ? ' ************':'exemple.mail.com': placeholder}
-          placeholderTextColor={ themColor.gray }
-          secureTextEntry={password}
+            style={lang === 'FR' ? styles.inputFR : styles.inputAR}
+            selectionColor={themColor.gray}
+            letterSpacing={2}
+            maxLength={50}
+            keyboardAppearance='light'
+            placeholder={placeholder === '' ?  password ? ' ************':'exemple.mail.com': placeholder}
+            placeholderTextColor={ themColor.gray }
+            secureTextEntry={password}
           />
       </KeyboardAvoidingView>
     );
@@ -43,7 +49,7 @@ export default OrbaInput;
 
 const styles = StyleSheet.create({
   inputContainer: {
-        width: width*.80,
+        width: width*.90,
         borderRadius: 10,
         alignItems: 'center',
         paddingLeft: 20,
@@ -55,7 +61,6 @@ const styles = StyleSheet.create({
     },
     inputFR: {
       flex: 1,
-    
       fontSize: 15,
       color: themColor.gray,
       paddingLeft: 25,
@@ -66,5 +71,6 @@ const styles = StyleSheet.create({
       color: themColor.gray,
       marginRight: 10,
       paddingRight: 25,
+      paddingLeft: 10
     }
 });

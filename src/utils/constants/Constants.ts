@@ -9,3 +9,4 @@ export const silderHomeheight = height*.3;
 export const headerHeight = height*.08; 
 export const itemSliderWidth = width *.8;
 export const tabBarHeight = width *.17;
+export const serchItemSize = width * .3 
