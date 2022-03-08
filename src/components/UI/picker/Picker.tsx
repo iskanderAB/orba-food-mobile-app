@@ -65,7 +65,8 @@ const styles = StyleSheet.create({
       height:50,
       minHeight: 50,
       flexDirection: 'row-reverse',
-      zIndex: 999
+      zIndex: 999,
+   
     },
     listContainer: { 
       borderRadius: 10,
@@ -74,6 +75,7 @@ const styles = StyleSheet.create({
       top:0,
       left:0,
       right:0,
+      // overflow: 'hidden',
       padding: 10
     },
     itemContainer: {
@@ -89,11 +91,13 @@ const styles = StyleSheet.create({
         fontFamily: Fonts.regular,
         marginRight: 10,
         paddingRight: 25,
+        color: themColor.darkGray
     },
     selectedItem: {
       fontFamily: Fonts.regular,
       textAlign: 'right',
       marginRight: 10,
       paddingRight: 25,
+      color: themColor.darkGray
     },
 })
