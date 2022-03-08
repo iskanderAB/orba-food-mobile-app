@@ -1,7 +1,10 @@
 
 import React  from "react";
-import { FlatList, SafeAreaView, StatusBar, StyleSheet } from "react-native";
+import { FlatList, SafeAreaView, StyleSheet } from "react-native";
+import Header from "../../components/header/Header";
 import NotificationItem, { Props } from "../../components/notificationItem/NotificationItem";
+import themColor from "../../utils/colors/themColor";
+import { headerHeight } from "../../utils/constants/Constants";
 
 const DATA = [
   {
@@ -30,8 +33,7 @@ const DATA = [
   },
   
 ];
-const App = () => {
-
+const Notification = () => {
   const renderItem = ({ item }: {item: Props}) => {
     return (
       <NotificationItem {...item} />
@@ -40,6 +42,7 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Header/>
       <FlatList
         data={DATA}
         renderItem={renderItem}
@@ -49,13 +52,12 @@ const App = () => {
   );
 };
 
+export default Notification;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    
-    marginTop: StatusBar.currentHeight || 0,
-    backgroundColor: "white"
+    backgroundColor: themColor.white,
+    paddingTop: headerHeight
   }
 });
-
-export default App;

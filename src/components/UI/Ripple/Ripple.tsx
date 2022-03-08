@@ -16,14 +16,15 @@ const Ripple:FC<RippleProps> = ({style, onTap, children}) => {
   const height = useSharedValue(0);
 
   const tapGestureHandlerEvent = Gesture.Pan()
-  .onBegin((event)=>{
+  .onBegin(()=>{
     const layout = measure(squareRef);
     width.value = layout.width;
     height.value = layout.height;
     scale.value = withTiming(1,{duration: 300});
-    
   })
   .onFinalize(()=>{
+    if (onTap)
+      runOnJS(onTap)();
     if(scale.value === 1 )  // ki el button ykoun wsol lel max scale 
       scale.value = 0  
     else 
@@ -31,8 +32,6 @@ const Ripple:FC<RippleProps> = ({style, onTap, children}) => {
           if(f)
             scale.value = 0;
       })
-    if (onTap)
-      runOnJS(onTap)();
   })
 
   ;
