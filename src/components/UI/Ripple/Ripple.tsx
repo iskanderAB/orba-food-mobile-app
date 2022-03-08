@@ -20,7 +20,6 @@ const Ripple:FC<RippleProps> = ({style, onTap, children}) => {
     const layout = measure(squareRef);
     width.value = layout.width;
     height.value = layout.height;
-    console.log("start ")
     scale.value = withTiming(1,{duration: 300});
     
   })
