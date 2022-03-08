@@ -13,6 +13,7 @@ import {
 import TabNavigator from '../componenets/tabNavigations/TabNavigator';
 import {height, tabBarHeight} from '../../utils/constants/Constants';
 import Search from '../../screens/Search/Search';
+import Notification from '../../screens/notification/Notification';
 
 const Stack = createNativeStackNavigator();
 
@@ -102,6 +103,16 @@ const MainNavigator = () => {
               gestureEnabled: true,
               presentation: 'modal',
               animation: 'slide_from_right',
+              animationTypeForReplace: 'push',
+            }}
+          />
+          <Stack.Screen
+            name="notification-screen"
+            component={Notification}
+            options={{
+              gestureEnabled: true,
+              presentation: 'modal',
+              animation: 'slide_from_left',
               animationTypeForReplace: 'push',
             }}
           />

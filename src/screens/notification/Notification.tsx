@@ -30,8 +30,7 @@ const DATA = [
   },
   
 ];
-const App = () => {
-
+const Notification = () => {
   const renderItem = ({ item }: {item: Props}) => {
     return (
       <NotificationItem {...item} />
@@ -49,6 +48,8 @@ const App = () => {
   );
 };
 
+export default Notification;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -57,5 +58,3 @@ const styles = StyleSheet.create({
     backgroundColor: "white"
   }
 });
-
-export default App;

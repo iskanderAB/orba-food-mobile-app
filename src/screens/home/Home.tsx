@@ -32,7 +32,7 @@ const Home: React.FC<Props> = ({ velocity, scrollY, translateSheetBottomY }) => 
 
   return (
     <GestureHandlerRootView style={styles.container}>
-      <Header />
+      <Header/>
       <ListItems sheetPress={onPress} velocity={velocity} scrollY={scrollY} />
       <BlackFilterBackground
         translateY={translateSheetBottomY}

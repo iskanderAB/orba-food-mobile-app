@@ -1,16 +1,31 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableHighlight, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import React from 'react'
 import { headerHeight, width } from '../../utils/constants/Constants';
 import Icon from 'react-native-vector-icons/Ionicons';
 import themColor from '../../utils/colors/themColor';
 import OrbaText from '../UI/orbaText/OrbaText';
+import { useNavigation } from '@react-navigation/native';
 
 const Header = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
+      <TouchableOpacity
+      // style={{
+      //   backgroundColor: 'red',
+      //   width: 100,
+      //   height: 100
+      // }}
+        onPress={()=> {
+          console.log("clicked !!"); 
+          // navigation.navigate('notification-screen');
+        }}
+      >
       <Icon name='notifications-outline' style={styles.notifIcon} />
       <OrbaText style={styles.textHeader}> مرحبا بك <OrbaText style={{color : themColor.green}}> اسكندر </OrbaText> </OrbaText>
-    </View>
+      </TouchableOpacity>
+   </View>
   )
 }
 
