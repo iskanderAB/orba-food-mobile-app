@@ -3,13 +3,22 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import themColor from '../../../utils/colors/themColor';
 import Ripple from '../../../components/UI/Ripple/Ripple';
+import { useNavigation } from '@react-navigation/native';
 
-const TabItem = ({name}: {name: string}) => {
+
+interface Props {
+  name: string,
+  screen : string
+}
+const TabItem: React.FC<Props> = ({name,screen}) => {
+
+  const navigation = useNavigation();
+  
   return (
     <View style={styles.container}>
       <Ripple
         onTap={() => {
-          console.log('tap');
+          navigation.navigate(screen);
         }}>
         <Icon name={name} style={styles.icon} />
       </Ripple>
@@ -22,9 +31,9 @@ export default TabItem;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: themColor.ligthWhite,
-    justifyContent: 'center',
-    alignItems: 'center'
+    backgroundColor: themColor.gray,
+    // justifyContent: 'center',
+    // alignItems: 'center'
   },
   icon: {
     color: themColor.darkGray,

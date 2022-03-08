@@ -66,149 +66,6 @@ const data = [
     deliveryTimeEstimation: [40,30],
     liked: true
   },
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'pizza',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  },
-   
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  }, 
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  }, 
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  }, 
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  }, 
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  }, 
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  }, 
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'Neapolitan Pizza Traditional Toppings',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: false
-  }, 
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'New York-Style Pizza Traditional Toppings:',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  },
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'pizza',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  },
-   
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  }, 
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  }, 
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  }, 
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  }, 
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  }, 
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  }, 
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'Neapolitan Pizza Traditional Toppings',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: false
-  }, 
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'New York-Style Pizza Traditional Toppings:',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  },
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'pizza',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  },
-   
-  {
-    imageUrl: '../res/images/foodImages/burger.png',
-    title: 'Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings Neapolitan Pizza Traditional Toppings',
-    price: [8.500, 16500],
-    deliveryTimeEstimation: [40,30],
-    liked: true
-  }, 
 
 ]
 
@@ -225,7 +82,7 @@ const ListItems: React.FC<Props> = ({sheetPress,velocity,scrollY}) => {
     onScroll: (event)=>{
       velocity.value = event.velocity?.y;
       scrollY.value = event.contentOffset.y;
-      console.log('test mohammed ', event);
+      // console.log('test mohammed ', event);
       // console.log("scrolle home ", velocity.value?.toFixed(1));
     },
     onEndDrag: (event)=>{
@@ -255,10 +112,10 @@ const ListItems: React.FC<Props> = ({sheetPress,velocity,scrollY}) => {
       ListHeaderComponent={<HeaderHome sheetPress={sheetPress}/>}
       ListFooterComponent={<View style={{marginBottom : tabBarHeight,backgroundColor: 'red' ,justifyContent: 'center',alignItems: 'center'}}><Text> loading ...  </Text></View>}
       renderItem={renderItem}
-      updateCellsBatchingPeriod={60}
-      removeClippedSubviews={false} //Fixme 
+      // updateCellsBatchingPeriod={60} //Fixme
+      // removeClippedSubviews={false} //Fixme 
       bounces={false}
-      maxToRenderPerBatch={15}
+      // maxToRenderPerBatch={15}
       ListEmptyComponent={<Text> list is empty </Text>}
       initialNumToRender={20}
       getItemLayout={getItemLayout}

@@ -38,8 +38,8 @@ const Item: React.FC<ItemProps> = React.memo(({
   index
 }) => {
   const scale = useSharedValue(0);
-  const counrRender= useRef(0);
-  console.log("form Item ",index," => ",  counrRender.current++);
+  // const counrRender= useRef(0);
+  // console.log("form Item ",index," => ",  counrRender.current++);
   const singleTap = Gesture.Tap().onStart(() => {
     console.log('Single tap!');
   });
