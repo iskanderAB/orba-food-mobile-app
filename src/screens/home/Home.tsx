@@ -1,5 +1,5 @@
 import React, {useCallback, useRef} from 'react';
-import { StyleSheet} from 'react-native';
+import { Button, StyleSheet, TouchableOpacity} from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import { SharedValue, useSharedValue } from 'react-native-reanimated';
 import BottomSheet, {
