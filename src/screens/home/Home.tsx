@@ -41,7 +41,6 @@ const Home: React.FC<Props> = ({ velocity, scrollY, translateSheetBottomY }) => 
       <BottomSheet ref={bottomSheet} translateY={translateSheetBottomY}>
         <GridCategories/>
       </BottomSheet>
-
     </GestureHandlerRootView>
   );
 };

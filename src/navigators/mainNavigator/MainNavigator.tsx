@@ -79,7 +79,7 @@ const MainNavigator = () => {
               gestureEnabled: true,
               presentation: 'modal',
               animation: 'slide_from_bottom',
-              animationTypeForReplace: 'push',
+              animationTypeForReplace: 'push'
             }}
           />
         </Stack.Group>
