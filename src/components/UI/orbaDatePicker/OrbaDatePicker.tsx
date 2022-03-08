@@ -39,7 +39,7 @@ const OrbaDatePicker: React.FC<OrbaDatePickerProps> = ({date, setDate}) => {
             open={open}
             mode="date"
             locale='fr-ca'
-            androidVariant={"iosClone"}
+            androidVariant={"nativeAndroid"}
             title="تاريخ الميلاد "
             confirmText="تأكيد"
             cancelText='إلغاء'
@@ -48,10 +48,11 @@ const OrbaDatePicker: React.FC<OrbaDatePickerProps> = ({date, setDate}) => {
                 setOpen(false)
                 setDate(date);
             }}
+            fadeToColor={themColor.ligthWhite}
             onCancel={() => {
                 setOpen(false)
             }}
-            textColor={themColor.orngeGold}
+            textColor={themColor.androidGreen}
         />
         </>  
         </TouchableOpacity>
@@ -78,5 +79,6 @@ const styles = StyleSheet.create({
         // transform: [{translateX:-30}]
         marginRight: 10,
         paddingRight: 25,
+        color: themColor.darkGray
     }    
 })

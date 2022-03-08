@@ -89,11 +89,13 @@ const styles = StyleSheet.create({
         fontFamily: Fonts.regular,
         marginRight: 10,
         paddingRight: 25,
+        color: themColor.darkGray
     },
     selectedItem: {
       fontFamily: Fonts.regular,
       textAlign: 'right',
       marginRight: 10,
       paddingRight: 25,
+      color: themColor.darkGray
     },
 })

@@ -5,10 +5,41 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SignUp from '../../screens/signUp/SignUp';
 import Register from '../../screens/register/Register';
 import Home from '../../screens/home/Home';
+import {
+  useAnimatedStyle,
+  useSharedValue,
+  withTiming,
+} from 'react-native-reanimated';
+import TabNavigator from '../componenets/tabNavigations/TabNavigator';
+import {height, tabBarHeight} from '../../utils/constants/Constants';
+import Search from '../../screens/Search/Search';
 
 const Stack = createNativeStackNavigator();
 
 const MainNavigator = () => {
+  const velocity = useSharedValue(0);
+  const scrollY = useSharedValue(0);
+  const translateSheetBottomY = useSharedValue(0);
+
+  const tabBarAnimation = useAnimatedStyle(() => {
+    return {
+      transform: [
+        {
+          translateY:
+            (+velocity.value.toFixed(1) <= 0 || scrollY.value < 150 && translateSheetBottomY.value  >= 0) //fix the velocity to create best tab animation 
+            ? withTiming(0)
+            : withTiming(tabBarHeight),
+        },
+      ],
+    };
+  }, []);
+
+  const HomeWithProps = () => <Home 
+    velocity={velocity} 
+    scrollY={scrollY}
+    translateSheetBottomY={translateSheetBottomY}
+    />;
+
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -41,7 +72,7 @@ const MainNavigator = () => {
             component={SignUp}
             initialParams={{formType: 'emailForm'}}
           />
-                    <Stack.Screen
+          <Stack.Screen
             name="Register"
             component={Register}
             options={{
@@ -49,22 +80,34 @@ const MainNavigator = () => {
               presentation: 'modal',
               animation: 'slide_from_bottom',
               animationTypeForReplace: 'push',
-              }}
+            }}
           />
         </Stack.Group>
+
         <Stack.Group>
           <Stack.Screen
             name="home-screen"
-            component={Home}
+            component={HomeWithProps}
             options={{
               gestureEnabled: true,
               presentation: 'modal',
-              animation: 'slide_from_bottom',
+              animation: 'fade',
               animationTypeForReplace: 'push',
-              }}
+            }}
+          />
+          <Stack.Screen
+            name="search-screen"
+            component={Search}
+            options={{
+              gestureEnabled: true,
+              presentation: 'modal',
+              animation: 'slide_from_right',
+              animationTypeForReplace: 'push',
+            }}
           />
         </Stack.Group>
       </Stack.Navigator>
+      <TabNavigator tabBarAnimation={tabBarAnimation} />
     </NavigationContainer>
   );
 };
