@@ -37,13 +37,18 @@ const data = [
     
     ]
 
-const ListCategories = ({sheetPress}:{sheetPress: ()=> void}) => {
+
+interface Props { 
+  sheetPress: ()=> void,
+  setMenu: (menu: string)=> void
+}
+const ListCategories: React.FC<Props> = ({sheetPress, setMenu})=> {
   return (
     <View style={styles.container}>
-      <ItemCategory src={'https://pngimg.com/uploads/sandwich/sandwich_PNG67.png'} />
-      <ItemCategory src={'https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG96784.png'}/>
-      <ItemCategory src={'https://pngimg.com/uploads/sandwich/sandwich_PNG67.png'} />
-      <ItemCategory src={'https://pngimg.com/uploads/sandwich/sandwich_PNG67.png'} />
+      <ItemCategory src={'https://pngimg.com/uploads/sandwich/sandwich_PNG67.png'} setMenu={()=>setMenu("half")} />
+      <ItemCategory src={'https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG96784.png'} setMenu={()=>setMenu("half")}/>
+      <ItemCategory src={'https://pngimg.com/uploads/sandwich/sandwich_PNG67.png'} setMenu={()=>setMenu("full")} />
+      <ItemCategory src={'https://pngimg.com/uploads/sandwich/sandwich_PNG67.png'} setMenu={()=>setMenu("full")} />
       <ButtonCategory sheetPress={sheetPress}/>
     </View>
   )

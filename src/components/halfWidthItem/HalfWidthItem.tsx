@@ -18,7 +18,6 @@ import Animated, {
   withSpring,
   withTiming,
 } from 'react-native-reanimated';
-import Ripple from '../UI/Ripple/Ripple';
 
 interface ItemProps {
   imageUrl: string;
@@ -29,7 +28,7 @@ interface ItemProps {
   index: number
 }
 
-const Item: React.FC<ItemProps> = React.memo(({
+const FullWidthItem: React.FC<ItemProps> = React.memo(({
   imageUrl,
   title,
   price,
@@ -73,15 +72,13 @@ const Item: React.FC<ItemProps> = React.memo(({
 
   return (
     <View style={styles.container}>
-      {/* <Ripple
-        onTap={() => {
-          console.log('tap');
-        }}> */}
       <GestureDetector gesture={Gesture.Exclusive(taps)}>
         <View style={styles.imageContainer}>
-          <View style={{flex: 1, backgroundColor: 'red'}}>
+          <View style={{flex: 1, backgroundColor: themColor.ligthWhite}}>
             <ImageBackground
-              source={require('../../res/images/foodImages/burger.png')}
+              source={{uri: "https://media.istockphoto.com/photos/cup-of-coffee-latte-isolated-on-white-background-with-clipping-path-picture-id1211524213?k=20&m=1211524213&s=612x612&w=0&h=ACk3lZIPweZq4z2TzjCc65gNAHj7lRdK99AfbNqMGWI="}}
+              resizeMethod="scale"
+              resizeMode='contain'
               style={styles.imageBackground}>
               <View style={styles.itemBar}>
                 <View style={styles.starContainer}>
@@ -105,7 +102,7 @@ const Item: React.FC<ItemProps> = React.memo(({
             {price[0]} DT - {price[1]} DT
           </Text>
           <Text style={styles.time}>
-            {deliveryTimeEstimation[0]} - {deliveryTimeEstimation[1]}{' '}
+           {deliveryTimeEstimation[1]}{' '}
             <Icon size={13} name="clock-o" />
           </Text>
         </View>
@@ -114,22 +111,21 @@ const Item: React.FC<ItemProps> = React.memo(({
         source={require('../../res/images/heart.png')}
         style={[styles.heart, heartAnimation]}
       />
-      {/* </Ripple>  */}
     </View>
   );
 });
 
-export default Item;
+export default FullWidthItem;
 
 const styles = StyleSheet.create({
   container: {
-    height: itemSize.height,
-    width: itemSize.width,
-    borderRadius: 10,
+    height: itemSize.height* .8,
+    width: itemSize.width/2,
+    borderRadius: 20,
     backgroundColor: themColor.ligthWhite,
     marginVertical: 5,
     overflow: 'hidden',
-    borderWidth: 1,
+    // borderWidth: 1,
     borderColor: 'rgba(81, 77, 77,.02)',
     elevation: 3,
     alignSelf: 'center',
@@ -141,10 +137,9 @@ const styles = StyleSheet.create({
   },
   imageBackground: {
     ...StyleSheet.absoluteFillObject,
-    resizeMode: 'contain',
   },
   itemBar: {
-    width: itemSize.width,
+    width: itemSize.width/2,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -166,6 +161,7 @@ const styles = StyleSheet.create({
   },
   rating: {
     fontSize: 10,
+    color: themColor.black
   },
   textContainer: {
     flex: 1,
@@ -173,22 +169,22 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   title: {
-    fontSize: 14,
-    maxWidth: itemSize.width * 0.8,
+    fontSize: 12,
+    maxWidth: (itemSize.width/2) * 0.8,
     color: themColor.black,
   },
   priceTimeContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: itemSize.width * 0.05,
+    paddingHorizontal: (itemSize.width/2) * 0.05,
     alignItems: 'center',
   },
   price: {
-    fontSize: 14,
+    fontSize: 11,
     color: themColor.darkGray,
   },
   time: {
-    fontSize: 12,
+    fontSize: 11,
     color: themColor.darkGray,
   },
   heart: {

@@ -11,7 +11,7 @@ import {
   withTiming,
 } from 'react-native-reanimated';
 import TabNavigator from '../componenets/tabNavigations/TabNavigator';
-import {height, tabBarHeight} from '../../utils/constants/Constants';
+import { tabBarHeight } from '../../utils/constants/Constants';
 import Search from '../../screens/Search/Search';
 import Notification from '../../screens/notification/Notification';
 
