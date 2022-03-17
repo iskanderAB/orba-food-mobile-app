@@ -98,29 +98,18 @@ export default class ProfileView extends Component {
                 </Text>
                 
 
-                <View style={styles.optionItem}>
-                <Image style={styles.imageRelatedProducts} source={{uri: 'https://st.depositphotos.com/1000647/4654/i/950/depositphotos_46544497-stock-photo-can-of-pepsi-cola.jpg'}}/>
-                <View style={styles.detailsRelatedProducts}> 
-                <Text style={styles.nameOfRelatedProducts}>
-                Sauce ketchup
-                  </Text>
-                  <Text style={styles.descOfRelatedProducts}>
-                  Le lorem ipsum, en imprimerie ...
-                  </Text>
-                  <Text style={styles.timeOfIRelatedProducts}>
-                30-40 min
-                  </Text>
-                  <Text style={styles.timeOfIRelatedProducts}>
-                  ★★★★
-                  </Text>
-                  </View>
-                  <Text style={styles.priceOfIRelatedProducts}>
-                  8.500 TND
-                  </Text>
-                </View>
-                <View style={styles.horizontalrule}></View>
-          </View>
-      </ScrollView >
+    <View style={styles.optionItem}>
+      <Image style={styles.imageRelatedProducts} source={{uri: 'https://st.depositphotos.com/1000647/4654/i/950/depositphotos_46544497-stock-photo-can-of-pepsi-cola.jpg'}}/>
+        <View style={styles.detailsRelatedProducts}> 
+            <Text style={styles.nameOfRelatedProducts}>Sauce ketchup</Text>
+            <Text style={styles.descOfRelatedProducts}>Le lorem ipsum, en imprimerie ...</Text>
+            <Text style={styles.timeOfIRelatedProducts}>30-40 min</Text>
+            <Text style={styles.timeOfIRelatedProducts}>★★★★</Text>
+        </View>
+          <Text style={styles.priceOfIRelatedProducts}> 8.500 TND</Text>
+    </View>
+   <View style={styles.horizontalrule}></View>
+  </View></ScrollView >
     );
   }
 }
