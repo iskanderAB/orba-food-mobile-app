@@ -8,7 +8,6 @@ import MainNavigator from './src/navigators/mainNavigator/MainNavigator';
 import store from './src/_redux/app/store';
 import TabNavigator from './src/navigators/componenets/tabNavigations/TabNavigator';
 
-
 const App = () => {
   useEffect(() => {
     const init = async () => {
@@ -25,6 +24,7 @@ const App = () => {
       <SafeAreaView style={styles.container}>
         <StatusBar hidden />
         <MainNavigator />
+        
       </SafeAreaView>
     </Provider>
   );

@@ -19,7 +19,7 @@ const ListFavItem: React.FC<Props> = ({
     }) => (
   <TouchableOpacity style={[styles.item]}>
     <View style={styles.favItem}>
-      <Image style={styles.imageFavItem} source={{uri:"https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png"}}/>
+      <Image style={styles.imageFavItem} source={{uri:img}}/>
         {/* <View style={styles.detailsFavItem}> */}
         <View> 
             <Text style={styles.nameOfFavProducts}>{name}</Text>
