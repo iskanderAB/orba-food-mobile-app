@@ -11,7 +11,7 @@ const TabNavigator = ({tabBarAnimation}:{tabBarAnimation: StyleProps}) => {
       <TabItem name='home-outline' screen='home-screen'/>
       <TabItem name='search-outline' screen='search-screen'/>
       <TabItem name='ios-cart-outline' screen='search-screen'/>
-      <TabItem name='heart-outline' screen='search-screen'/>
+      <TabItem name='heart-outline' screen='fav-screen'/>
       <TabItem name='person-outline' screen='search-screen'/>
     </Animated.View>
   )

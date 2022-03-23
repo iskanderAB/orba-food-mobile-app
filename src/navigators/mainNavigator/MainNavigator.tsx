@@ -14,6 +14,7 @@ import TabNavigator from '../componenets/tabNavigations/TabNavigator';
 import { tabBarHeight } from '../../utils/constants/Constants';
 import Search from '../../screens/Search/Search';
 import Notification from '../../screens/notification/Notification';
+import ListFav from '../../screens/ListFav/ListFav';
 
 const Stack = createNativeStackNavigator();
 
@@ -89,6 +90,16 @@ const MainNavigator = () => {
           <Stack.Screen
             name="home-screen"
             component={HomeWithProps}
+            options={{
+              gestureEnabled: true,
+              presentation: 'modal',
+              animation: 'fade',
+              animationTypeForReplace: 'push',
+            }}
+          />
+          <Stack.Screen
+            name="fav-screen"
+            component={ListFav}
             options={{
               gestureEnabled: true,
               presentation: 'modal',
