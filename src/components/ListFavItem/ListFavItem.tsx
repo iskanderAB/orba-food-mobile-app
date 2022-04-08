@@ -1,5 +1,6 @@
 import React from "react";
 import {  StyleSheet, Text, TouchableOpacity , Image , View} from "react-native";
+import themColor from "../../utils/colors/themColor";
 
 export interface Props {
     id:String;
@@ -36,7 +37,6 @@ export default ListFavItem;
 const styles = StyleSheet.create({
  item: {
     flexDirection:"row-reverse",
-    padding: 12,
     marginVertical:4,
     marginHorizontal: 16,
     borderRadius:10
@@ -44,7 +44,10 @@ const styles = StyleSheet.create({
 
   favItem:{
     width:"100%",
+    padding: 7,
     flexDirection: 'row',
+    borderRadius: 5,
+    backgroundColor: themColor.ligthWhite
   },
   nameOfFavProducts:{
     fontSize:16,

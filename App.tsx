@@ -7,6 +7,7 @@ import themColor from './src/utils/colors/themColor';
 import MainNavigator from './src/navigators/mainNavigator/MainNavigator';
 import store from './src/_redux/app/store';
 import TabNavigator from './src/navigators/componenets/tabNavigations/TabNavigator';
+import ProductByCategory from './src/screens/productByCategory/ProductByCategory';
 
 const App = () => {
   useEffect(() => {
@@ -24,6 +25,7 @@ const App = () => {
       <SafeAreaView style={styles.container}>
         <StatusBar hidden />
         <MainNavigator />
+        {/* <ProductByCategory/> */}
         
       </SafeAreaView>
     </Provider>

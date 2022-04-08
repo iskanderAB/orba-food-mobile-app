@@ -1,6 +1,9 @@
 import React from "react";
 import { FlatList, SafeAreaView, StyleSheet} from "react-native";
+import Header from "../../components/header/Header";
 import ListFavItem, { Props } from "../../components/ListFavItem/ListFavItem";
+import themColor from "../../utils/colors/themColor";
+import { headerHeight } from "../../utils/constants/Constants";
 
 const DATA = [ 
   {
@@ -45,6 +48,7 @@ const ListFav = () => {
   };
   return (
     <SafeAreaView style={styles.container}>
+      <Header/>
       <FlatList
         data={DATA}
         renderItem={renderItem}
@@ -56,7 +60,8 @@ const ListFav = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white"
+    backgroundColor: themColor.white,
+    paddingTop: headerHeight
   },
 
 });

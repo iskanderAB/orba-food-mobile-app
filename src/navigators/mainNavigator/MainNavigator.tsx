@@ -15,6 +15,7 @@ import { tabBarHeight } from '../../utils/constants/Constants';
 import Search from '../../screens/Search/Search';
 import Notification from '../../screens/notification/Notification';
 import ListFav from '../../screens/ListFav/ListFav';
+import ProductByCategory from '../../screens/productByCategory/ProductByCategory';
 
 const Stack = createNativeStackNavigator();
 
@@ -103,7 +104,7 @@ const MainNavigator = () => {
             options={{
               gestureEnabled: true,
               presentation: 'modal',
-              animation: 'fade',
+              animation: 'slide_from_right',
               animationTypeForReplace: 'push',
             }}
           />
@@ -113,13 +114,23 @@ const MainNavigator = () => {
             options={{
               gestureEnabled: true,
               presentation: 'modal',
-              animation: 'slide_from_right',
+              animation: 'slide_from_left',
               animationTypeForReplace: 'push',
             }}
           />
           <Stack.Screen
             name="notification-screen"
             component={Notification}
+            options={{
+              gestureEnabled: true,
+              presentation: 'modal',
+              animation: 'slide_from_left',
+              animationTypeForReplace: 'push',
+            }}
+          />
+          <Stack.Screen
+            name="category-screen"
+            component={ProductByCategory}
             options={{
               gestureEnabled: true,
               presentation: 'modal',

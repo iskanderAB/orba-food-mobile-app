@@ -3,6 +3,7 @@ import React from 'react'
 import ItemCategory from '../UI/itemCategory/ItemCategory'
 import { width } from '../../utils/constants/Constants';
 import ButtonCategory from '../UI/buttonCategory/ButtonCategory';
+import { useNavigation } from '@react-navigation/native';
 
 
 const data = [
@@ -43,12 +44,14 @@ interface Props {
   setMenu: (menu: string)=> void
 }
 const ListCategories: React.FC<Props> = ({sheetPress, setMenu})=> {
+
+  const navigator = useNavigation();
   return (
     <View style={styles.container}>
-      <ItemCategory src={'https://pngimg.com/uploads/sandwich/sandwich_PNG67.png'} setMenu={()=>setMenu("half")} />
-      <ItemCategory src={'https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG96784.png'} setMenu={()=>setMenu("half")}/>
-      <ItemCategory src={'https://pngimg.com/uploads/sandwich/sandwich_PNG67.png'} setMenu={()=>setMenu("full")} />
-      <ItemCategory src={'https://pngimg.com/uploads/sandwich/sandwich_PNG67.png'} setMenu={()=>setMenu("full")} />
+      <ItemCategory src={'https://pngimg.com/uploads/sandwich/sandwich_PNG67.png'} setMenu={()=>navigator.navigate("category-screen")} />
+      <ItemCategory src={'https://pngimg.com/uploads/burger_sandwich/burger_sandwich_PNG96784.png'} setMenu={()=>navigator.navigate("category-screen")}/>
+      <ItemCategory src={'https://pngimg.com/uploads/sandwich/sandwich_PNG67.png'} setMenu={()=>navigator.navigate("category-screen")} />
+      <ItemCategory src={'https://pngimg.com/uploads/sandwich/sandwich_PNG67.png'} setMenu={()=>navigator.navigate("category-screen")} />
       <ButtonCategory sheetPress={sheetPress}/>
     </View>
   )
